@@ -1,6 +1,7 @@
 import path from 'path';
 import crypto from 'crypto';
 import multer, { StorageEngine } from 'multer';
+// import { PassThrough } from 'nodemailer/lib/xoauth2';
 
 const tmpFolder = path.resolve(__dirname, '..', '..', 'tmp');
 
@@ -12,20 +13,20 @@ interface IUploadConfig {
 
   multer: {
     storage: StorageEngine;
-  }
+  },
 
   config: {
-    disk: {}
+    disk: {};
     aws: {
       bucket: string;
     }
-  }
+  };
 }
 
 export default {
   driver: process.env.STORAGE_DRIVER,
 
-  tmpFolder: tmpFolder,
+  tmpFolder,
   uploadsFolder: path.resolve(tmpFolder, 'uploads'),
 
   multer: {
@@ -45,5 +46,5 @@ export default {
     aws: {
       bucket: 'app-gobarber-skj'
     }
-  }
+  },
 } as IUploadConfig;

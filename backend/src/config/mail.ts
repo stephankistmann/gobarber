@@ -1,5 +1,5 @@
 interface IMailConfig {
-  driver: 'ethereal' | 'ses';
+  driver: 'ses' | 'ethereal';
 
   defaults: {
     from: {
