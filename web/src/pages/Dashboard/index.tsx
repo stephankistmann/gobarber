@@ -5,12 +5,12 @@ import DayPicker, { DayModifiers } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
 import { Container, Header, HeaderContent, Profile, Content, Schedule, NextAppointment, Section, Appointment, Calendar } from './styles';
-
 import logoImg from '../../assets/logo.svg';
 import { FiPower, FiClock } from 'react-icons/fi';
 import { useAuth } from '../../hooks/auth';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
+import avatar from '../../assets/avatar.jpg';
 
 interface MonthAvailabilityItem {
   day: number;
@@ -92,7 +92,7 @@ const Dashboard: React.FC = () => {
   }, [currentMonth, monthAvailability]);
 
   const selectedDateAsText = useMemo(() => {
-    return format(selectedDate, "dd'th' 'of' MMMM", {
+    return format(selectedDate, "MMMM dd", {
       locale: enUS,
     });
   }, [selectedDate]);
@@ -119,6 +119,7 @@ const Dashboard: React.FC = () => {
     );
   }, [appointments]);
 
+
   return (
     <Container>
       <Header>
@@ -126,7 +127,8 @@ const Dashboard: React.FC = () => {
           <img src={logoImg} alt="GoBarber" />
 
           <Profile>
-            <img src={user.avatar_url}
+            <img
+              src={user.avatar_url || avatar}
               alt={user.name}
             />
             <div>
