@@ -16,6 +16,8 @@ import { useToast } from '../../hooks/toast';
 import { Container, Content, AvatarInput } from './styles';
 import { useAuth } from '../../hooks/auth';
 
+import avatar from '../../assets/avatar.jpg';
+
 interface ProfileFormData {
   name: string;
   email: string;
@@ -141,7 +143,7 @@ const Profile: React.FC = () => {
         }} onSubmit={handleSubmit}>
 
           <AvatarInput>
-            <img src={user.avatar_url} alt={user.name} />
+            <img src={user.avatar_url || avatar} alt={user.name} />
             <label htmlFor="avatar">
               <FiCamera />
 
