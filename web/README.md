@@ -1,3 +1,29 @@
+## Log In Page
+
+![gobarberlogin](https://user-images.githubusercontent.com/32865899/91505895-1fdd4a00-e8a7-11ea-9c37-4f7d597e6279.png)
+
+## Dashboard Page
+
+![gobarberdashboard](https://user-images.githubusercontent.com/32865899/91505901-25d32b00-e8a7-11ea-9ea6-591a48ad0e05.png)
+
+## Profile Page
+
+![gobarberprofile](https://user-images.githubusercontent.com/32865899/91505925-31265680-e8a7-11ea-9fdb-3f827fe90d13.png)
+
+## Sign Up Page
+
+![gobarbersignup](https://user-images.githubusercontent.com/32865899/91505919-2d92cf80-e8a7-11ea-8b82-ce6b391cebcc.png)
+
+## Reset Password page
+
+![gobarberresetpassword](https://user-images.githubusercontent.com/32865899/91505930-32578380-e8a7-11ea-9d76-8cb42f00d838.png)
+
+## Forgot Password Page
+
+![gobarberforgotpassword](https://user-images.githubusercontent.com/32865899/91505932-3388b080-e8a7-11ea-8969-9ee97eb30aa2.png)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
