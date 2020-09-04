@@ -36,24 +36,24 @@ const Profile: React.FC = () => {
       formRef.current?.setErrors({});
 
       const schema = Yup.object().shape({
-        name: Yup.string().required('Nome obrigatório'),
+        name: Yup.string().required('Name is required'),
         email: Yup.string()
-          .required('E-mail obrigatório')
-          .email('Digite um e-mail válido'),
+          .required('Email address is required')
+          .email('Enter a valid email address'),
         old_password: Yup.string(),
         password: Yup.string().when('old_password', {
           is: val => !!val.length,
-          then: Yup.string().required('Campo obrigatório'),
+          then: Yup.string().required('Required field'),
           otherwise: Yup.string(),
         }).nullable(),
         password_confirmation: Yup.string()
           .when('old_password', {
             is: val => !!val.length,
-            then: Yup.string().required('Campo obrigatório'),
+            then: Yup.string().required('Required field'),
             otherwise: Yup.string(),
           })
           .nullable()
-          .oneOf([Yup.ref('password'), null], 'Confirmação incorreta'),
+          .oneOf([Yup.ref('password'), null], 'Incorrect confirmation'),
       });
 
       await schema.validate(data, {
@@ -88,8 +88,8 @@ const Profile: React.FC = () => {
 
       addToast({
         type: 'success',
-        title: 'Perfil atualizado!',
-        description: 'Suas informações do perfil foram atualizadas com sucesso!'
+        title: 'Profile updated!',
+        description: 'Your profile was updated successfully!'
       });
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
@@ -102,8 +102,8 @@ const Profile: React.FC = () => {
 
       addToast({
         type: 'error',
-        title: 'Erro na atualização',
-        description: 'Ocorreu um erro ao atualizar perfil, tente novamente.',
+        title: 'Profile update error',
+        description: 'An error occurred while trying to update your profile, try again.',
       });
     }
   }, [addToast, history, updateUser]);
@@ -119,7 +119,7 @@ const Profile: React.FC = () => {
 
         addToast({
           type: 'success',
-          title: 'Avatar atualizado!',
+          title: 'Avatar updated!',
         });
       });
     }

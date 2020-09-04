@@ -33,8 +33,8 @@ const SignIn: React.FC = () => {
       formRef.current?.setErrors({});
 
       const schema = Yup.object().shape({
-        email: Yup.string().required('E-mail obrigatório').email('Digite um e-mail válido'),
-        password: Yup.string().required('Senha obrigatória')
+        email: Yup.string().required('Email address required').email('Enter a valid email address'),
+        password: Yup.string().required('Password required')
       });
 
       await schema.validate(data, {
@@ -58,8 +58,8 @@ const SignIn: React.FC = () => {
 
       addToast({
         type: 'error',
-        title: 'Erro na autenticação',
-        description: 'Ocorreu um erro ao fazer login, cheque as credenciais.',
+        title: 'Authentication error',
+        description: 'An error occurred while trying to authenticate your login, check your credentials.',
       });
     }
   }, [signIn, addToast, history]);

@@ -33,9 +33,9 @@ const SignUp: React.FC = () => {
       formRef.current?.setErrors({});
 
       const schema = Yup.object().shape({
-        name: Yup.string().required('Nome obrigatório'),
-        email: Yup.string().required('E-mail obrigatório').email('Digite um e-mail válido'),
-        password: Yup.string().min(6, 'No mínimo 6 dígitos')
+        name: Yup.string().required('Name required'),
+        email: Yup.string().required('Email address required').email('Enter a valid email address'),
+        password: Yup.string().min(6, 'Minimum of 6 digits')
       });
 
       await schema.validate(data, {
@@ -49,8 +49,8 @@ const SignUp: React.FC = () => {
 
       addToast({
         type: 'success',
-        title: 'Cadastro realizado!',
-        description: 'Você já pode fazer seu logon no GoBarber!'
+        title: 'Account created!',
+        description: 'You can now log-in to GoBarber!'
       });
 
     } catch (err) {
@@ -65,8 +65,8 @@ const SignUp: React.FC = () => {
 
       addToast({
         type: 'error',
-        title: 'Erro no cadastro',
-        description: 'Ocorreu um erro ao fazer o cadastro.',
+        title: 'Registration error',
+        description: 'An error occurred while trying to register you account, try again',
       });
     }
   }, [addToast, history]);
